@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom'
 export const Navbar = () => {
     return (
         <>
-           <nav className="navbar bg-dark">
-            <h1>
-                <Link to="/"><i className="fas fa-code"></i><h5>Home</h5></Link>
+            <nav className="navbar bg-dark">
 
-            </h1>
+                <Link className="text-white" to="/"> <h5>Home</h5></Link>
 
-                <Link to='/history'>
-                    Privious Games
+
+
+                <Link className="text-white" to='/history'>
+                   <h5> Privious Games</h5>
                 </Link>
 
 
-        </nav> 
+            </nav>
         </>
     )
 }

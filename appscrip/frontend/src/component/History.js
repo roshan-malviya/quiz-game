@@ -13,29 +13,26 @@ const History = ({ getHistory, history }) => {
 
     return (
         <>
-            <div className="p-4">
-                <ul>
-                    {
-                        history.map((data, index) => (
-                            <li>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Game: {index + 1}  <br />Date: {data.time}</h5>
-                                        <h5 class="card-subtitle mb-2 ">{data.name}</h5>
-                                        <p class="card-text">question1: {data.question1}</p>
-                                        <p class="card-text">answer1: {data.answer1}</p>
-                                        <p class="card-text">question2: {data.question2}</p>
-                                        <p class="card-text">answer2: {data.answer2}.</p>
-                                    </div>
+
+            <ul className="pr-5">
+                {
+                    history && history.map((data, index) => (
+                        <div key={index} className="mt-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Game: {index + 1}  <br />Date: {data.time}</strong></h5>
+                                    <h5 class="card-subtitle mb-2 "><strong>{data.name}</strong></h5>
+                                    <p class="card-text">question1: {data.question1}</p>
+                                    <p class="card-text">answer1: {data.answer1}</p>
+                                    <p class="card-text">question2: {data.question2}</p>
+                                    <p class="card-text">answer2: {data.answer2}.</p>
                                 </div>
-                            </li>
-                        ))
-                    }
+                            </div>
+                        </div>
+                    ))
+                }
 
-                </ul>
-
-            </div>
-
+            </ul>
 
         </>
     )
@@ -43,6 +40,7 @@ const History = ({ getHistory, history }) => {
 
 History.propTypes = {
     getHistory: PropTypes.func.isRequired,
+    history: PropTypes.array.isRequired
 
 }
 
